@@ -21,10 +21,11 @@
 title: Curriculum Vitae
 email: bc.santos@pm.me
 description: >- # this means to ignore newlines until "baseurl:"
-baseurl: "/curriculumvitae" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://BentoCarlos.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb
 github_username: BentoCarlos
+full_name: "Bento Carlos Silva dos Santos"
 
 # Build settings
 theme: minima
