@@ -1,0 +1,184 @@
+---
+---
+/* --- RESET E CONFIGURAÇÕES GERAIS --- */
+body {
+  background-color: #121212;
+  color: #e0e0e0;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Container Principal */
+.curriculum {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Links (Roxo Claro para contraste) */
+a {
+  color: #bb86fc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #d7b7fd;
+  text-decoration: underline;
+}
+
+/* --- CABEÇALHO --- */
+.cv-header h1 {
+  color: #ffffff;
+  font-size: 2.8rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: -1px;
+}
+
+.contact-info {
+  color: #a0a0a0;
+  font-size: 0.95rem;
+}
+
+/* --- TÍTULOS DE SEÇÃO --- */
+.curriculum h2 {
+  font-size: 1.6rem;
+  color: #bb86fc;
+  border-bottom: 2px solid #3700b3;
+  padding-bottom: 0.5rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* --- BLOCO DE EXPERIÊNCIA --- */
+.experience-block {
+  margin-bottom: 2.5rem;
+}
+
+.company {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.company a {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+/* Linha do Tempo (Timeline) */
+.roles-history {
+  margin-bottom: 1.5rem;
+  padding-left: 1.2rem;
+  border-left: 3px solid #333;
+}
+
+.role-item {
+  font-size: 1.1rem;
+  margin: 0 0 0.8rem 0;
+  padding-left: 0.5rem;
+  color: #d1d1d1;
+  position: relative;
+}
+
+/* Bolinhas da Linha do Tempo */
+.role-item::before {
+  content: '';
+  position: absolute;
+  left: -1.75rem;
+  top: 0.6rem;
+  width: 10px;
+  height: 10px;
+  background-color: #333;
+  border: 2px solid #121212;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px #333;
+}
+
+.role-item:first-child {
+  color: #fff;
+  font-weight: 500;
+}
+
+.role-item:first-child::before {
+  background-color: #bb86fc;
+  box-shadow: 0 0 5px #bb86fc;
+}
+
+.date {
+  font-size: 0.9rem;
+  color: #888;
+  font-weight: normal;
+  margin-left: 10px;
+}
+
+/* --- LISTA DE DESTAQUES --- */
+.highlights-list {
+  list-style: none;
+  padding: 0;
+}
+
+.highlights-list li {
+  margin-bottom: 0.8rem;
+  color: #cccccc;
+}
+
+.highlights-list li strong {
+  color: #bb86fc;
+}
+
+/* --- HABILIDADES (CARDS) --- */
+.skills-section ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skills-section li {
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  color: #e0e0e0;
+  font-size: 0.95rem;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.skills-section li:hover {
+  border-color: #bb86fc;
+  transform: translateY(-2px);
+}
+
+.skills-section li strong {
+  color: #bb86fc;
+  margin-right: 5px;
+}
+
+/* --- EDUCAÇÃO --- */
+.education-block h3 {
+  color: #fff;
+  margin-bottom: 0.2rem;
+}
+
+.education-block .school {
+  color: #a0a0a0;
+}
+
+/* --- Header --- */
+.site-header .site-title,
+.site-header .site-title:visited {
+  color: #ffffff !important;
+}
+
+.site-header .site-title:hover {
+  color: #bb86fc !important;
+  text-decoration: none;
+}
+
+.site-nav .page-link {
+  color: #e0e0e0 !important;
+}
