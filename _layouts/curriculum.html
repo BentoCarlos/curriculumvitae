@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,55 +14,64 @@
   <main class="page-content" aria-label="Content">
     <div class="wrapper">
       <div class="curriculum">
-        <h1>{{ site.full_name }}</h1>
-        <p class="contact-info">Email: <a href="mailto:{{ site.email }}">{{ site.email }}</a> | GitHub: <a href="https://github.com/{{ site.github_username }}">github.com/{{ site.github_username }}</a></p>
 
-        <h2>Experiência Profissional</h2>
-        <div class="experience">
-          <h3 class="company"><a href="https://www.dsin.com.br" target="_blank">DSIN | Tecnologia da Informação</a></h3>
-          <h4><strong>Desenvolvedor de Sistema Júnior - II | Jun 2025 - Presente</strong></h4>
-          <ul>
-            <h4>Responsabilidades:</h4>
-            <ul>
-                <li><i>Além das Responsabilidades de Júnior:</i></li>
-                <li>Versionamento de sistemas através do GIT</li>
-                <li>Liberação e deploy de novas versões em produção</li>
-                <li>Orientação e treinamento de novos colaboradores</li>
-            </ul>
-          </ul>
-          <h4><strong>Desenvolvedor de Sistema Júnior - I | Jun 2024 - Mai 2025</strong></h4>
-          <ul>
-            <h4>Responsabilidades:</h4>
-            <ul>
-                <li><i>Além das Responsabilidades de Trainee:</i></li>
-                <li>Análise de novas rotinas de complexidade média/grande</li>
-                <li>Preparação de sistemas para demonstração técnica</li>
-            </ul>
-          </ul>
-          <h4><strong>Desenvolvedor de Sistema Trainee | Out 2023 - Mai 2024</strong></h4>
-          <ul>
-            <h4>Responsabilidades:</h4>
-            <ul>
-                <li>Desenvolvimento de novas rotinas de acordo os requisitos levantados</li>
-                <li>Execução de testes para validação de funcionalidades</li>
-                <li>Manutenção de sistemas existentes</li>
-            </ul>
-          </ul>
-        </div>
+        <header class="cv-header">
+          <h1>{{ site.full_name }}</h1>
+          <p class="contact-info">
+            Email: <a href="mailto:{{ site.email }}">{{ site.email }}</a> |
+            GitHub: <a href="https://github.com/{{ site.github_username }}">github.com/{{ site.github_username }}</a>
+          </p>
+        </header>
 
-        <h2>Habilidades Técnicas</h2>
-        <ul>
-          <li><strong>Linguagens:</strong> JavaScript, Python, PHP, Pascal</li>
-          <li><strong>Frontend:</strong> HTML, CSS, YUI</li>
-          <li><strong>Backend:</strong> Zend DB, Delphi 7</li>
-          <li><strong>Databases :</strong> MySQL, Firebird</li>
-        </ul>
+        <section class="experience-section">
+          <h2>Experiência Profissional</h2>
 
-        <h2>Educação</h2>
-        <div class="education">
-          <h3>Formação Acadêmica</h3>
-          <p class="school"><a href="https://www.univem.edu.br" target="_blank">UNIVEM</a> | Conclusão: 2023</p>
-        </div>
+          {% for job in site.data.experience %}
+          <div class="experience-block">
+            <h3 class="company">
+              <a href="{{ job.url }}" target="_blank">{{ job.company }}</a>
+            </h3>
+
+            <div class="roles-history">
+              {% for role in job.roles %}
+                <h4 class="role-item">
+                  <strong>{{ role.title }}</strong>
+                  <span class="date">| {{ role.period }}</span>
+                </h4>
+              {% endfor %}
+            </div>
+
+            <ul class="highlights-list">
+              {% for item in job.highlights %}
+                <li>
+                  <strong>{{ item.title }}:</strong> {{ item.description }}
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+          {% endfor %}
+        </section>
+
+        <section class="skills-section">
+          <h2>Habilidades Técnicas</h2>
+          <ul>
+            {% for skill in site.data.skills %}
+              <li><strong>{{ skill.category }}:</strong> {{ skill.items }}</li>
+            {% endfor %}
+          </ul>
+        </section>
+
+        <section class="education-section">
+          <h2>Educação</h2>
+          {% for edu in site.data.education %}
+          <div class="education-block">
+            <h3>{{ edu.degree }}</h3> <p class="school">
+              <a href="{{ edu.url }}" target="_blank">{{ edu.institution }}</a> | {{ edu.completion }}
+            </p>
+          </div>
+          {% endfor %}
+        </section>
+
       </div>
     </div>
   </main>

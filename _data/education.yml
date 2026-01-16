@@ -1,0 +1,4 @@
+- institution: "UNIVEM"
+  url: "https://www.univem.edu.br"
+  degree: "Bacharelado em Ciência da Computação" # Exemplo, ajuste conforme seu curso
+  completion: "Conclusão: 2023"

@@ -1,0 +1,8 @@
+- category: "Linguagens"
+  items: "JavaScript, Python, PHP, Pascal"
+- category: "Frontend"
+  items: "HTML, CSS, YUI"
+- category: "Backend"
+  items: "Zend DB, Delphi 7"
+- category: "Databases"
+  items: "MySQL, Firebird"
