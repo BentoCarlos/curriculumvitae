@@ -182,3 +182,55 @@ a:hover {
 .site-nav .page-link {
   color: #e0e0e0 !important;
 }
+
+/* --- ESTILO PARA IMPRESSÃO/PDF --- */
+@media print {
+  /* Esconde elementos inúteis na impressão */
+  header.site-header,
+  footer.site-footer,
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    font-size: 11pt; /* Tamanho bom para leitura em papel */
+  }
+
+  /* Garante contraste nos links */
+  a {
+    color: #000000 !important;
+    text-decoration: none !important;
+  }
+
+  /* Mostra a URL do link ao lado do texto (útil em papel) */
+  a[href^="http"]:after {
+    content: " (" attr(href) ")";
+    font-size: 0.8rem;
+    color: #555;
+  }
+
+  /* Ajustes de margem e layout */
+  .curriculum {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: none !important;
+  }
+
+  h1, h2, h3, h4 {
+    color: #000 !important;
+    page-break-after: avoid; /* Evita quebra de página logo após título */
+  }
+
+  .role-item::before {
+    border-color: #000 !important; /* Bolinha preta no papel */
+    background-color: #fff !important;
+  }
+
+  /* Força quebra de página limpa se necessário */
+  .experience-block {
+    page-break-inside: avoid;
+  }
+}
