@@ -13,6 +13,8 @@
   <meta property="og:description" content="Especialista em desenvolvimento de sistemas de alta performance, LGPD e integrações governamentais.">
   <meta property="og:image" content="{{ '/assets/sua-foto-de-perfil.jpg' | absolute_url }}">
   <meta property="og:url" content="{{ site.url }}">
+
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
 
@@ -66,6 +68,14 @@
           <ul>
             {% for skill in site.data.skills %}
               <li><strong>{{ skill.category }}:</strong> {{ skill.items }}</li>
+            {% endfor %}
+          </ul>
+        </section>
+
+        <section class="skills-section"> <h2>Idiomas</h2>
+          <ul>
+            {% for lang in site.data.languages %}
+              <li><strong>{{ lang.language }}:</strong> {{ lang.level }}</li>
             {% endfor %}
           </ul>
         </section>

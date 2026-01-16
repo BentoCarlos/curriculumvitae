@@ -1,0 +1,7 @@
+- language: "Português"
+  level: "Nativo"
+
+- language: "Inglês"
+  # "Técnico" destaca que você lê documentação bem.
+  # "Conversação Funcional" é a maneira chique de dizer "consigo me virar".
+  level: "Técnico (Leitura Avançada / Conversação Funcional)"
