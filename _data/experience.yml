@@ -1,8 +1,10 @@
 - company: "DSIN | Tecnologia da Informação"
   url: "https://www.dsin.com.br"
   roles:
+    - title: "Desenvolvedor de Sistema Júnior - III"
+      period: "Jan 2026 - Presente"
     - title: "Desenvolvedor de Sistema Júnior - II"
-      period: "Jun 2025 - Presente"
+      period: "Jun 2025 - Dez 2025"
     - title: "Desenvolvedor de Sistema Júnior - I"
       period: "Jun 2024 - Mai 2025"
     - title: "Desenvolvedor de Sistema Trainee"
