@@ -27,10 +27,10 @@
         <header class="cv-header">
           <h1>{{ site.full_name }}</h1>
             <p class="contact-info">
-              Email: <a href="mailto:{{ site.email }}">{{ site.email }}</a> <br>
-              GitHub: <a href="https://github.com/{{ site.github_username }}" target="_blank">github.com/{{ site.github_username }}</a> <br>
-              LinkedIn: <a href="https://linkedin.com/in/{{ site.linkedin_username }}" target="_blank">linkedin.com/in/{{ site.linkedin_username }}</a> <br>
-              <span class="location">📍 Marília, SP</span>
+              <span class="text">Email:</span> <a href="mailto:{{ site.email }}">{{ site.email }}</a> <br>
+              <span class="text">GitHub:</span> <a href="https://github.com/{{ site.github_username }}" target="_blank">github.com/{{ site.github_username }}</a> <br>
+              <span class="text">LinkedIn:</span> <a href="https://linkedin.com/in/{{ site.linkedin_username }}" target="_blank">linkedin.com/in/{{ site.linkedin_username }}</a> <br>
+              <span class="text location">📍 Marília, SP</span>
             </p>
         </header>
 
@@ -47,7 +47,7 @@
               {% for role in job.roles %}
                 <h4 class="role-item">
                   <strong>{{ role.title }}</strong>
-                  <span class="date">{{ role.period }}</span>
+                  <span class=" text date">{{ role.period }}</span>
                 </h4>
               {% endfor %}
             </div>
@@ -85,7 +85,7 @@
           {% for edu in site.data.education %}
           <div class="education-block">
             <h3>{{ edu.degree }}</h3> <p class="school">
-              <a href="{{ edu.url }}" target="_blank">{{ edu.institution }}</a> | {{ edu.completion }}
+              <a href="{{ edu.url }}" target="_blank">{{ edu.institution }}</a> | <span class="text">{{ edu.completion }}</span>
             </p>
           </div>
           {% endfor %}

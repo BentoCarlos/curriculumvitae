@@ -246,4 +246,8 @@ a:hover {
   @page {
     margin: 1.5cm;
   }
+
+  .text {
+    color: #666 !important;
+  }
 }
