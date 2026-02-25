@@ -1,12 +1,14 @@
+{% assign lang = page.lang | default: site.default_lang %}
+{% assign t = site.data.i18n[lang] %}
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="{{ lang }}">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ site.title }}</title>
-  <link rel="stylesheet" href="assets/main.css">
-  <link rel="stylesheet" href="assets/resume.css">
+  <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/resume.css' | relative_url }}">
 
   <meta name="description" content="Currículo de {{ site.full_name }} - Desenvolvedor de Software focado em PHP, Delphi e Segurança.">
   <meta property="og:title" content="Currículo de {{ site.full_name }}">
@@ -14,10 +16,9 @@
   <meta property="og:image" content="{{ '/assets/sua-foto-de-perfil.jpg' | absolute_url }}">
   <meta property="og:url" content="{{ site.url }}">
 
-  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
 </head>
 <body>
-
   {% include header.html %}
 
   <main class="page-content" aria-label="Content">
@@ -30,14 +31,15 @@
               <span class="text">Email:</span> <a href="mailto:{{ site.email }}">{{ site.email }}</a> <br>
               <span class="text">GitHub:</span> <a href="https://github.com/{{ site.github_username }}" target="_blank">github.com/{{ site.github_username }}</a> <br>
               <span class="text">LinkedIn:</span> <a href="https://linkedin.com/in/{{ site.linkedin_username }}" target="_blank">linkedin.com/in/{{ site.linkedin_username }}</a> <br>
-              <span class="text location">📍 Marília, SP</span>
+              <span class="text location">📍 Marília, SP 🇧🇷</span>
             </p>
         </header>
 
         <section class="experience-section">
-          <h2>Experiência Profissional</h2>
+          <h2>{{ t.professional_experience }}</h2>
 
-          {% for job in site.data.experience %}
+          {% assign experience = site.data[lang].experience %}
+          {% for job in experience %}
           <div class="experience-block">
             <h3 class="company">
               <a href="{{ job.url }}" target="_blank">{{ job.company }}</a>
@@ -64,25 +66,28 @@
         </section>
 
         <section class="skills-section">
-          <h2>Habilidades Técnicas</h2>
+          <h2>{{ t.technical_skills }}</h2>
           <ul>
-            {% for skill in site.data.skills %}
+            {% assign skills = site.data[lang].skills %}
+            {% for skill in skills %}
               <li><strong>{{ skill.category }}:</strong> {{ skill.items }}</li>
             {% endfor %}
           </ul>
         </section>
 
-        <section class="skills-section"> <h2>Idiomas</h2>
+        <section class="skills-section"> <h2>{{ t.languages }}</h2>
           <ul>
-            {% for lang in site.data.languages %}
-              <li><strong>{{ lang.language }}:</strong> {{ lang.level }}</li>
+            {% assign languages = site.data[lang].languages %}
+            {% for language in languages %}
+              <li><strong>{{ language.language }}:</strong> {{ language.level }}</li>
             {% endfor %}
           </ul>
         </section>
 
         <section class="education-section">
-          <h2>Educação</h2>
-          {% for edu in site.data.education %}
+          <h2>{{ t.education }}</h2>
+          {% assign education = site.data[lang].education %}
+          {% for edu in education %}
           <div class="education-block">
             <h3>{{ edu.degree }}</h3> <p class="school">
               <a href="{{ edu.url }}" target="_blank">{{ edu.institution }}</a> | <span class="text">{{ edu.completion }}</span>

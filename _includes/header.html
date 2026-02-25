@@ -1,5 +1,20 @@
+{% assign current_lang = page.lang %}
 <header class="site-header" role="banner">
-<div class="wrapper">
+  <div class="wrapper header-wrapper">
     <a class="site-title" rel="author" href="{{ site.baseurl }}">{{ site.title }}</a>
-</div>
+    <div class="language-selector">
+      <select id="language-select" onchange="changeSelectedLanguage(this.value)">
+        {% for language in site.languages %}
+          {% assign lang_code = language[0] %}
+          {% assign lang_name = language[1].name %}
+          <option value="{{ lang_code }}" {% if lang_code == current_lang %}selected{% endif %}>{{ lang_name }}</option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
 </header>
+<script>
+  function changeSelectedLanguage(language) {
+    window.location.href = '{{ site.baseurl }}/' + language + '/';
+  }
+</script>
